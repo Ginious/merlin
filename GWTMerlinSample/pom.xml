@@ -5,16 +5,17 @@
 	<artifactId>MerlinSample</artifactId>
 	<version>0.0.9-SNAPSHOT</version>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>test</testSourceDirectory>
+
 		<resources>
 			<resource>
-				<directory>src</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
+				<directory>src/main/resources</directory>
+				<includes>
+					<!-- add resources required by GWT web application to be compiled -->
+					<include>**/*.gwt.xml</include>
+				</includes>
 			</resource>
 		</resources>
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -22,8 +23,32 @@
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.5.0</version>
+				<executions>
+					<execution>
+						<configuration>
+							<modules>
+								<module>us.worldofginio.gwt.merlin.sample.MerlinSample</module>
+							</modules>
+							<webappDirectory>${basedir}${file.separator}war</webappDirectory>
+							<warSourceDirectory>${basedir}${file.separator}war</warSourceDirectory>
+							<style>PRETTY</style>
+							<extraJvmArgs>-Dgwt.persistentunitcache=false</extraJvmArgs>
+						</configuration>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -32,6 +57,13 @@
 			<groupId>us.worldofginio.gwt</groupId>
 			<artifactId>Merlin</artifactId>
 			<version>0.0.9-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>

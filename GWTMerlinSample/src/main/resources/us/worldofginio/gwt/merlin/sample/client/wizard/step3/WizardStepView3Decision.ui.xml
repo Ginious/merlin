@@ -1,0 +1,23 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<g:Grid ui:field="pnlStepContent">
+		<g:row>
+			<g:customCell>
+				<g:Label text="Do you have a Certification?" />
+			</g:customCell>
+			<g:customCell>
+				<g:RadioButton name="haveCertification" ui:field="rbHaveCertificationYes" text="Yes" />
+			</g:customCell>
+		</g:row>
+		<g:row>
+			<g:customCell>
+				<g:Label text="" />
+			</g:customCell>
+			<g:customCell>
+				<g:RadioButton name="haveCertification" ui:field="rbHaveCertificationNo" text="No" />
+			</g:customCell>
+		</g:row>
+	</g:Grid>
+
+</ui:UiBinder> 
