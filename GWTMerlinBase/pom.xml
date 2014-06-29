@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>us.worldofginio.gwt</groupId>
+	<artifactId>MerlinBase</artifactId>
+	<version>0.0.9-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+	<name>Merlin Base</name>
+	<description>Base pom of Merlin providing dependencies and common build configuration</description>
+
+	<!-- Development -->
+	<developers>
+		<developer>
+			<name>Christian Sauer</name>
+			<organization>World of Ginious</organization>
+			<organizationUrl>http://www.worldofginio.us</organizationUrl>
+		</developer>
+	</developers>
+
+	<!-- Project properties -->
+	<properties>
+
+		<!-- Artifact dependency versions -->
+		<version-gwt>2.5.1</version-gwt>
+		<version-junit>4.11</version-junit>
+		<version-javax-inject>1</version-javax-inject>
+		<version-ginject>2.1.2</version-ginject>
+		<version-aopalliance>1.0</version-aopalliance>
+
+		<!-- Plugin dependency versions -->
+		<version-compiler-plugin>3.1</version-compiler-plugin>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- Merlin -->
+			<dependency>
+				<groupId>us.worldofginio.gwt</groupId>
+				<artifactId>Merlin</artifactId>
+				<version>0.0.9-SNAPSHOT</version>
+			</dependency>
+
+			<!-- GWT -->
+			<dependency>
+				<groupId>com.google.gwt</groupId>
+				<artifactId>gwt-user</artifactId>
+				<version>${version-gwt}</version>
+			</dependency>
+
+			<!-- Dependency Injection -->
+			<dependency>
+				<groupId>com.google.gwt.inject</groupId>
+				<artifactId>gin</artifactId>
+				<version>${version-ginject}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>${version-javax-inject}</version>
+			</dependency>
+			<dependency>
+				<groupId>aopalliance</groupId>
+				<artifactId>aopalliance</artifactId>
+				<version>${version-aopalliance}</version>
+			</dependency>
+
+			<!-- Testing -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${version-junit}</version>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${version-compiler-plugin}</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>gwt-maven-plugin</artifactId>
+					<version>${version-gwt}</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

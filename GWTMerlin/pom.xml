@@ -3,12 +3,36 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>us.worldofginio.gwt</groupId>
-	<artifactId>Merlin</artifactId>
-	<version>0.0.9-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<parent>
+		<groupId>us.worldofginio.gwt</groupId>
+		<artifactId>MerlinBase</artifactId>
+		<version>0.0.9-SNAPSHOT</version>
+	</parent>
 
+	<artifactId>Merlin</artifactId>
+
+	<packaging>jar</packaging>
 	<description>Lightweight wizard framework for GWT</description>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.google.gwt.inject</groupId>
+			<artifactId>gin</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 		<resources>
@@ -28,53 +52,11 @@
 				</includes>
 			</resource>
 		</resources>
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	<dependencies>
-
-		<dependency>
-			<groupId>com.google.inject.extensions</groupId>
-			<artifactId>guice-assistedinject</artifactId>
-			<version>3.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>aopalliance</groupId>
-			<artifactId>aopalliance</artifactId>
-			<version>1.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.gwt.inject</groupId>
-			<artifactId>gin</artifactId>
-			<version>2.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.inject</groupId>
-			<artifactId>javax.inject</artifactId>
-			<version>1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-user</artifactId>
-			<version>2.5.0</version>
-		</dependency>
-	</dependencies>
 </project>

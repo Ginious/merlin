@@ -1,1 +1,9 @@
+/classes
+/META-INF
 /MerlinSample
+/maven-status
+/maven-archiver
+/m2e-wtp
+/generated-sources
+/MerlinSample-*
+/.generated
