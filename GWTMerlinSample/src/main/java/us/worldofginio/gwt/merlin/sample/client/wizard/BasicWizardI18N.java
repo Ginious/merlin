@@ -31,7 +31,7 @@ public class BasicWizardI18N implements WizardI18N {
 	public String getLabelForWizardAction(WizardActionIdentifier inAction) {
 
 		if (inAction == BasicWizardAction.BACK) {
-			return "Zurück";
+			return "Zurï¿½ck";
 		} else if (inAction == BasicWizardAction.CANCEL) {
 			return "Abbrechen";
 		} else if (inAction == BasicWizardAction.FINISH) {
@@ -47,13 +47,13 @@ public class BasicWizardI18N implements WizardI18N {
 	public String getTooltipForWizardAction(WizardActionIdentifier inAction) {
 
 		if (inAction == BasicWizardAction.BACK) {
-			return "Eine Seite zurück";
+			return "Eine Seite zurï¿½ck";
 		} else if (inAction == BasicWizardAction.CANCEL) {
-			return "Wizard abbrechen und Änderungen verwerfen";
+			return "Wizard abbrechen und ï¿½nderungen verwerfen";
 		} else if (inAction == BasicWizardAction.FINISH) {
 			return "Abschliessen und Meldung einreichen";
 		} else if (inAction == BasicWizardAction.FORWARD) {
-			return "Weiter zur nächsten Seite";
+			return "Weiter zur nï¿½chsten Seite";
 		}
 
 		throw new RuntimeException("Nicht unterstuetzte Page Action: " + inAction.toString());
@@ -69,7 +69,7 @@ public class BasicWizardI18N implements WizardI18N {
 		} else if (inStepViewId == BasicWizardStepViewIdentifier.B_NAME) {
 			outTitle = "Name";
 		} else if (inStepViewId == BasicWizardStepViewIdentifier.C_DECISION) {
-			outTitle = "Children";
+			outTitle = "Certification";
 		} else if (inStepViewId == BasicWizardStepViewIdentifier.D_CHILDNAME) {
 			outTitle = "Child Name";
 		} else if (inStepViewId == BasicWizardStepViewIdentifier.E_SUMMARY) {
