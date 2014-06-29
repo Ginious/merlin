@@ -41,6 +41,7 @@
 				<includes>
 					<!-- add resources required by GWT web application to be compiled -->
 					<include>**/*.gwt.xml</include>
+					<include>**/*.ui.xml</include>
 				</includes>
 			</resource>
 		</resources>
